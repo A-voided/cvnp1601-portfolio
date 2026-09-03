@@ -1,0 +1,25 @@
+2026-09-02T22:18:59.136525+00:00 cvnp1606lab multipathd[8341]: uevent trigger error
+2026-09-02T22:18:59.140421+00:00 cvnp1606lab multipathd[8341]: uevent trigger error
+2026-09-02T22:18:59.140793+00:00 cvnp1606lab multipathd[8341]: uevent trigger error
+2026-09-02T22:18:59.141266+00:00 cvnp1606lab multipathd[8341]: uevent trigger error
+2026-09-02T22:18:59.151125+00:00 cvnp1606lab systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-09-02T22:18:59.151309+00:00 cvnp1606lab systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-09-02T22:18:59.196318+00:00 cvnp1606lab kernel: RAS: Correctable Errors collector initialized.
+2026-09-02T22:19:00.875213+00:00 cvnp1606lab snapd[8954]: helpers.go:190: error trying to compare the snap system key: system-key missing on disk
+2026-09-02T23:42:23.212686+00:00 cvnp1606lab multipathd[12537]: uevent trigger error
+2026-09-02T23:42:23.212873+00:00 cvnp1606lab systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-09-02T23:42:23.212877+00:00 cvnp1606lab systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-09-02T23:42:23.213749+00:00 cvnp1606lab kernel: RAS: Correctable Errors collector initialized.
+2026-09-02T23:42:32.496523+00:00 cvnp1606lab multipathd[12537]: uevent trigger error
+2026-09-02T23:42:42.499984+00:00 cvnp1606lab multipathd[12537]: uevent trigger error
+2026-09-02T23:42:52.504591+00:00 cvnp1606lab multipathd[12537]: uevent trigger error
+2026-09-03T16:30:05.417177+00:00 cvnp1606lab multipathd[2155]: uevent trigger error
+2026-09-03T16:30:05.421167+00:00 cvnp1606lab systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-09-03T16:30:05.421170+00:00 cvnp1606lab systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) was skipped because of an unmet condition check (ConditionPathExists=/var/lib/apport/autoreport).
+2026-09-03T16:30:05.422176+00:00 cvnp1606lab kernel: RAS: Correctable Errors collector initialized.
+2026-09-03T16:30:14.509849+00:00 cvnp1606lab multipathd[2155]: uevent trigger error
+2026-09-03T16:30:24.522492+00:00 cvnp1606lab multipathd[2155]: uevent trigger error
+2026-09-03T16:30:34.539383+00:00 cvnp1606lab multipathd[2155]: uevent trigger error
+2026-09-02T22:19:01.012425+00:00 cvnp1606lab snapd[8954]: autorepair.go:177: WARNING: the system booted with an old initrd without unlocked status reporting
+2026-09-02T23:42:25.664890+00:00 cvnp1606lab snapd[13058]: autorepair.go:177: WARNING: the system booted with an old initrd without unlocked status reporting
+2026-09-03T16:30:05.870559+00:00 cvnp1606lab snapd[2729]: autorepair.go:177: WARNING: the system booted with an old initrd without unlocked status reporting
