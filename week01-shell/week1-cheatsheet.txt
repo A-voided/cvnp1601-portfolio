@@ -1,0 +1,56 @@
+pwd
+Flags: None
+Example: pwd
+Risk: Reveals your current working directory, which may expose filesystem location information.
+
+ls
+Flags: -l (long listing), -a (show hidden files), -h (human-readable sizes)
+Example: ls -la
+Risk: Listing directories can reveal filenames, permissions, ownership, and other potentially sensitive information.
+
+cd
+Flags: .. (parent directory), ~ (home directory), - (previous directory)
+Example: cd ~/week01-shell
+Risk: Changing to the wrong directory can cause commands to operate on unintended files.
+
+find
+Flags: -name (match filename), -type (file type), -maxdepth (limit search depth)
+Example: find /etc -name "*.conf" 2>/dev/null
+Risk: Searching sensitive directories may produce permission errors or expose protected filenames.
+
+grep
+Flags: -i (case-insensitive), -r (recursive), -v (invert match)
+Example: grep -i "error" /var/log/syslog | head -20
+Risk: Searching logs can expose sensitive system information; piping grep into > can overwrite a file.
+
+head
+Flags: -n (number of lines)
+Example: head -20 /var/log/syslog
+Risk: Displaying the beginning of sensitive files may reveal confidential information.
+
+wc
+Flags: -l (count lines), -w (count words), -c (count bytes)
+Example: wc -l /var/log/syslog
+Risk: Counts can reveal information about the contents or activity of sensitive files.
+
+|
+Flags: None
+Example: grep -i "error" /var/log/syslog | head -20
+Risk: Pipes pass output from one command to another; make sure sensitive output is not accidentally sent to another command.
+
+>
+
+Flags: None
+Example: grep -i "error" /var/log/syslog > errors.txt
+Risk: Overwrites the destination file and can destroy previous evidence or data.
+
+> >
+
+Flags: None
+Example: grep -i "warning" /var/log/syslog >> errors.txt
+Risk: Appends data instead of overwriting, but repeated commands can create duplicate or unexpectedly large files.
+
+2>/dev/null
+Flags: 2 (standard error), /dev/null (discard output)
+Example: find /etc -name "*.conf" 2>/dev/null
+Risk: Suppresses error messages, which can hide permission problems or other useful diagnostic information.
