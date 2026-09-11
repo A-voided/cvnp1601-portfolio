@@ -54,3 +54,39 @@ Risk: Appends data instead of overwriting, but repeated commands can create dupl
 Flags: 2 (standard error), /dev/null (discard output)
 Example: find /etc -name "*.conf" 2>/dev/null
 Risk: Suppresses error messages, which can hide permission problems or other useful diagnostic information.
+
+
+WEEK 2 
+
+vim modes and key commands
+Example Press i to enter Insert mode then press Esc to return to Normal mode and use to save and exit
+Risk Using the wrong mode or command can modify or overwrite a file unexpectedly
+
+nano save and exit
+Example Press Ctrl O to save then Enter to confirm and Ctrl X to exit
+Risk Saving changes to the wrong file can overwrite existing information
+
+grep r
+Flags r recursive search
+Example grep -r "error" /var/log
+Risk Recursive searches can expose sensitive information from many files and directories
+
+grep v
+Flags v invert the match
+Example grep -v "error" logfile.txt
+Risk Inverted searches can include large amounts of information that may contain sensitive data
+
+grep E
+Flags E extended regular expressions
+Example grep -E "error|warning" logfile.txt
+Risk Broad pattern matching can return sensitive information that was not intended to be displayed
+
+awk print field
+Flags print a specific field using its field number
+Example awk '{print $3}' logfile.txt
+Risk Printing fields from logs can expose usernames IP addresses or other sensitive information
+
+awk F colon
+Flags F sets the field separator
+Example awk -F: '{print $1}' /etc/passwd
+Risk Reading fields from system files can expose account information and should be handled carefully
