@@ -1,0 +1,6 @@
+Provisioning Summary
+
+For this ticket, I created the devuser Linux account and added it to the developers group. I also worked on setting up restricted sudo 
+access for restarting the nginx service. During the process, I checked the account, group membership, and sudo configuration. 
+I had a few command and configuration errors, which I corrected while troubleshooting. The goal was to give the account only the 
+access needed instead of full sudo privileges. I also verified the settings and documented the work as part of the Week 3 ticket.
