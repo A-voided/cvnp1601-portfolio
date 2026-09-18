@@ -1,0 +1,40 @@
+=== CVNP1601-W04 Evidence Report ===
+Generated : 2026-09-18 17:43:41
+Host      : cvnp1606lab
+Week      : 04
+Folder    : /home/james/cvnp1601-portfolio/week04-access-lockdown
+
+[/PROJECT PERMISSION STATE — ls -ld /project]
+  drwxrwsr-x+ 2 james developers 4096 Sep 18 17:27 /project
+
+[/PROJECT ACL STATE — getfacl /project]
+  getfacl: Removing leading '/' from absolute path names
+  # file: project
+  # owner: james
+  # group: developers
+  # flags: -s-
+  user::rwx
+  group::rwx
+  mask::rwx
+  other::r-x
+  default:user::rwx
+  default:group::rwx
+  default:group:developers:rw-
+  default:mask::rwx
+  default:other::r-x
+
+[CURRENT UMASK]
+  0002
+
+[REQUIRED FILES]
+  README.md : NOT FOUND
+  permission-audit.txt : FOUND (1477 bytes)
+  acl-audit.txt : FOUND (1045 bytes)
+  tech-lead-note.md : NOT FOUND
+  troubleshooting-narrative.md : NOT FOUND
+  week4-diagnosis.md : NOT FOUND
+
+[SECRET SCAN]
+  No obvious secret/token patterns detected. Still manually review every file before committing.
+
+Commit this file (evidence-report.txt) to your GitHub repo under week04-access-lockdown/.
