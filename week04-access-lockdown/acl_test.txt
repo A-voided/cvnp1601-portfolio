@@ -1,0 +1,8 @@
+# file: shared
+# owner: root
+# group: auditors
+# flags: --t
+user::rwx
+group::rwx
+other::r-x
+

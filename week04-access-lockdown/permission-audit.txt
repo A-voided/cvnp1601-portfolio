@@ -1,0 +1,26 @@
+-rw-r-----  1 root shadow      1047 Sep 18 16:47 /etc/shadow
+-rwsr-xr-x  1 root root       64152 May 30  2024 /usr/bin/passwd
+
+/project:
+total 8
+drwxr-xr-x  2 root developers 4096 Sep 18 16:49 .
+drwxr-xr-x 25 root root       4096 Sep 18 16:49 ..
+
+/tmp:
+total 60
+drwxrwxrwt 15 root root 4096 Sep 18 16:47 .
+drwxr-xr-x 25 root root 4096 Sep 18 16:49 ..
+drwxrwxrwt  2 root root 4096 Sep 18 16:12 .font-unix
+drwxrwxrwt  2 root root 4096 Sep 18 16:12 .ICE-unix
+drwx------  2 root root 4096 Sep 18 16:12 snap-private-tmp
+drwx------  3 root root 4096 Sep 18 16:42 systemd-private-cc8b6105be60408c8905debe29e114c5-ModemManager.service-bWEtmp
+drwx------  3 root root 4096 Sep 18 16:42 systemd-private-cc8b6105be60408c8905debe29e114c5-polkit.service-0YuzyE
+drwx------  3 root root 4096 Sep 18 16:12 systemd-private-cc8b6105be60408c8905debe29e114c5-systemd-logind.service-YS9gED
+drwx------  3 root root 4096 Sep 18 16:42 systemd-private-cc8b6105be60408c8905debe29e114c5-systemd-resolved.service-GE3n1c
+drwx------  3 root root 4096 Sep 18 16:42 systemd-private-cc8b6105be60408c8905debe29e114c5-systemd-timesyncd.service-I5zaOz
+drwx------  3 root root 4096 Sep 18 16:42 systemd-private-cc8b6105be60408c8905debe29e114c5-upower.service-smTeje
+drwx------  2 root root 4096 Sep 18 16:12 vmware-root_5682-1003073630
+drwx------  2 root root 4096 Sep 18 16:42 vmware-root_7594-2831158531
+drwxrwxrwt  2 root root 4096 Sep 18 16:12 .X11-unix
+drwxrwxrwt  2 root root 4096 Sep 18 16:12 .XIM-unix
+0002
