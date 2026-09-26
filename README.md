@@ -79,7 +79,13 @@ I used getfacl to view the ACL configuration for /project and redirected the out
 
 Week 4 also included reviewing access permissions and identifying how Linux permissions and ACLs can be used to control access to files and directories. The goal was to make sure users have only the access they need while documenting the permissions for troubleshooting and security review.
 
-AI Use
+Portfolio card WEEK 5
+
+I am able to install and configure nginx, enable it to start automatically at boot, verify that it is running, and use a Bash script to automate the setup and check for failures.
+
+AI Tool Use Statement
+
+I used AI to help organize and explain the Bash script requirements and review the commands used for installing, enabling, starting, and verifying nginx. I changed and verified the script myself and tested the commands on the Linux system. I can explain the shebang, apt update, apt install, systemctl enable --now, systemctl is-active, systemctl is-enabled, $? and exit 1 without AI help.
 
 AI assistance was used throughout this portfolio as a learning and troubleshooting aid. AI was used to explain Linux commands and concepts, help identify command errors, provide step-by-step guidance, and assist with organizing the documentation and progress logs.
 
