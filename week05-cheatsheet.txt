@@ -1,0 +1,224 @@
+WEEK 1
+
+pwd
+Flags: None
+Example: pwd
+Risk: Reveals your current working directory, which may expose filesystem location information.
+
+ls
+Flags: -l (long listing), -a (show hidden files), -h (human-readable sizes)
+Example: ls -la
+Risk: Listing directories can reveal filenames, permissions, ownership, and other potentially sensitive information.
+
+cd
+Flags: .. (parent directory), ~ (home directory), - (previous directory)
+Example: cd ~/week01-shell
+Risk: Changing to the wrong directory can cause commands to operate on unintended files.
+
+find
+Flags: -name (match filename), -type (file type), -maxdepth (limit search depth)
+Example: find /etc -name "*.conf" 2>/dev/null
+Risk: Searching sensitive directories may produce permission errors or expose protected filenames.
+
+grep
+Flags: -i (case-insensitive), -r (recursive), -v (invert match)
+Example: grep -i "error" /var/log/syslog | head -20
+Risk: Searching logs can expose sensitive system information.
+
+head
+Flags: -n (number of lines)
+Example: head -20 /var/log/syslog
+Risk: Displaying the beginning of sensitive files may reveal confidential information.
+
+wc
+Flags: -l (count lines), -w (count words), -c (count bytes)
+Example: wc -l /var/log/syslog
+Risk: Counts can reveal information about the contents or activity of sensitive files.
+
+|
+Flags: None
+Example: grep -i "error" /var/log/syslog | head -20
+Risk: Pipes pass output from one command to another; sensitive output could be passed unintentionally.
+
+>
+
+Flags: None
+Example: grep -i "error" /var/log/syslog > errors.txt
+Risk: Overwrites the destination file and can destroy previous evidence or data.
+
+> >
+
+Flags: None
+Example: grep -i "warning" /var/log/syslog >> errors.txt
+Risk: Appends data instead of overwriting, but repeated commands can create duplicate or large files.
+WEEK 2
+
+vim modes and key commands
+Flags: None
+Example: Press i to enter Insert mode, then press Esc to return to Normal mode
+Risk: Using the wrong mode or command can modify or overwrite a file unexpectedly.
+
+nano save and exit
+Flags: None
+Example: Press Ctrl O to save, Enter to confirm, and Ctrl X to exit
+Risk: Saving changes to the wrong file can overwrite existing information.
+
+grep -r
+Flags: -r (recursive search)
+Example: grep -r "error" /var/log
+Risk: Recursive searches can expose sensitive information from many files and directories.
+
+grep -v
+Flags: -v (invert the match)
+Example: grep -v "error" logfile.txt
+Risk: Inverted searches can include large amounts of information that may contain sensitive data.
+
+grep -E
+Flags: -E (extended regular expressions)
+Example: grep -E "error|warning" logfile.txt
+Risk: Broad pattern matching can return sensitive information.
+
+awk print field
+Flags: Print a specific field using its field number
+Example: awk '{print $3}' logfile.txt
+Risk: Printing fields from logs can expose usernames, IP addresses, or other sensitive information.
+
+awk -F:
+Flags: -F (sets the field separator)
+Example: awk -F: '{print $1}' /etc/passwd
+Risk: Reading system files can expose account information.
+WEEK 3
+
+useradd
+Flags: -m (create home directory)
+Example: sudo useradd -m devuser
+Risk: Creating unnecessary accounts can increase unauthorized access risk.
+
+groupadd
+Flags: None
+Example: sudo groupadd developers
+Risk: Groups control access to files and resources, so incorrect membership can grant excessive access.
+
+usermod -aG
+Flags: -aG (append user to a group)
+Example: sudo usermod -aG developers devuser
+Risk: Adding a user to the wrong group can give them unauthorized permissions.
+
+visudo
+Flags: None
+Example: sudo visudo
+Risk: Incorrect sudoers entries can grant excessive administrative privileges.
+
+sudo -l -U
+Flags: -l (list privileges), -U (specify user)
+Example: sudo -l -U devuser
+Risk: Reveals the commands a user is allowed to run with elevated privileges.
+
+id
+Flags: None
+Example: id devuser
+Risk: Shows user and group membership information that can reveal access privileges.
+
+chmod +x
+Flags: +x (add execute permission)
+Example: chmod +x collect-evidence.sh
+Risk: Makes a file executable, so only trusted scripts should receive execute permission.
+
+WEEK 4
+
+chmod 750
+Flags: 750 (owner rwx, group r-x, others none)
+Example: chmod 750 /project
+Risk: Incorrect permissions can expose files or prevent authorized users from accessing them.
+
+getfacl
+Flags: None
+Example: getfacl /project
+Risk: Displays detailed access-control information that can reveal who has access to a directory.
+
+setfacl
+Flags: -m (modify ACL), -d (set default ACL)
+Example: setfacl -m g:developers /project
+Risk: Incorrect ACL entries can give users or groups more access than intended.
+
+getfacl /project
+Flags: None
+Example: getfacl /project >> acl-audit.txt
+Risk: Saving ACL information creates an access record that may contain sensitive permission details.
+
+SGID
+Flags: None
+Example: chmod g+s /project
+Risk: The SGID bit causes new files in the directory to inherit its group, so the directory must have the correct group ownership.
+
+Sticky bit
+Flags: None
+Example: chmod +t /tmp
+Risk: The sticky bit helps prevent users from deleting files owned by other users in shared directories.
+
+passwd SUID
+Flags: None
+Example: ls -l /usr/bin/passwd
+Risk: SUID allows the program to run with the file owner's privileges, so incorrect SUID permissions can create security risks.
+
+/etc/shadow
+Flags: None
+Example: ls -l /etc/shadow
+Risk: Contains sensitive password information and should be protected from unauthorized access.
+
+/project
+Flags: None
+Example: ls -ld /project
+Risk: Incorrect ownership, group membership, or ACLs can expose shared project files.
+
+WEEK 5
+
+systemctl start
+Flags: None
+Example: sudo systemctl start nginx
+Risk: Starts the service immediately but does not make it start after a reboot.
+
+systemctl enable
+Flags: None
+Example: sudo systemctl enable nginx
+Risk: Makes a service start at boot but does not start it immediately.
+
+systemctl enable --now
+Flags: None
+Example: sudo systemctl enable --now nginx
+Risk: Starts the service now and enables it at boot, so verify the service is working correctly.
+
+systemctl status
+Flags: None
+Example: systemctl status nginx
+Risk: Can reveal service status and configuration information.
+
+systemctl is-active
+Flags: --quiet (suppresses output)
+Example: systemctl is-active --quiet nginx
+Risk: Uses the command's return code to verify whether a service is running.
+
+systemctl is-enabled
+Flags: None
+Example: systemctl is-enabled nginx
+Risk: Confirms whether a service is configured to start at boot.
+
+$?
+Flags: None
+Example: if [ $? -ne 0 ]; then echo "Install failed"; fi
+Risk: Checking the previous command's exit status helps prevent scripts from continuing after a failure.
+
+exit 1
+Flags: None
+Example: exit 1
+Risk: Stops the script and signals that an error occurred.
+
+#!/bin/bash
+Flags: None
+Example: #!/bin/bash
+Risk: Ensures the script is run using the intended Bash interpreter.
+
+chmod +x
+Flags: +x (adds execute permission)
+Example: chmod +x ~/server-setup.sh
+Risk: Makes the script executable, so only trusted scripts should be executed.

@@ -1,0 +1,33 @@
+=== CVNP1601-W05 Evidence Report ===
+Generated : 2026-09-26 18:12:52
+Host      : cvnp1606lab
+Week      : 05
+Folder    : /home/james/cvnp1601-portfolio/week05-service-setup
+
+[NGINX PACKAGE STATE — dpkg -l nginx]
+  Desired=Unknown/Install/Remove/Purge/Hold
+  | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+  |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+  ||/ Name           Version            Architecture Description
+  +++-==============-==================-============-==========================================
+  ii  nginx          1.24.0-2ubuntu7.18 amd64        small, powerful, scalable web/proxy server
+
+[NGINX SERVICE STATE]
+  is-active  : active
+  is-enabled : enabled
+
+[SERVER-SETUP.SH — ls -la]
+  -rwxrwxr-x 1 james james 663 Sep 26 17:35 /home/james/cvnp1601-portfolio/week05-service-setup/server-setup.sh
+
+[REQUIRED FILES]
+  README.md : NOT FOUND
+  server-setup.sh : FOUND (663 bytes)
+  week1-cheatsheet.txt : NOT FOUND
+  tech-lead-note.md : NOT FOUND
+  troubleshooting-narrative.md : FOUND (758 bytes)
+  week5-diagnosis.md : FOUND (532 bytes)
+
+[SECRET SCAN]
+  WARNING: possible secret/token pattern found in collect-evidence5.sh — review before committing (pattern: aws_secret_access_key)
+
+Commit this file (evidence-report.txt) to your GitHub repo under week05-service-setup/.
