@@ -28,5 +28,6 @@ else
     exit 1
 fi
 
-# Report the completed backup path
+# Report the completed backup path and verify the archive exists
 log "Backup completed: $ARCHIVE"
+ls -lh "$ARCHIVE"
