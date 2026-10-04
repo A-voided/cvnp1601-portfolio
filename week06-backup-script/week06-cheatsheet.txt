@@ -1,0 +1,60 @@
+WEEK 6
+
+bash variables
+Flags: None
+Example: BACKUP_DIR="/var/backups/etc"
+Risk: Incorrect or unquoted variables can cause commands to use the wrong path or file.
+
+quoting variables
+Flags: None
+Example: "$ARCHIVE"
+Risk: Unquoted variables can cause spaces or special characters to be interpreted incorrectly.
+
+command substitution
+Flags: $()
+Example: TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
+Risk: Command substitution runs another command and its output becomes part of the variable value, so unexpected command output can affect a script.
+
+functions
+Flags: None
+Example: log() { echo "message"; }
+Risk: Functions can perform repeated actions, so incorrect function logic can affect every place where the function is called.
+
+tee -a
+Flags: -a (append)
+Example: echo "Backup started" | tee -a "$LOG"
+Risk: Logs can contain sensitive system information, so access to log files should be restricted.
+
+exit codes
+Flags: 0 means success, nonzero means failure
+Example: exit 1
+Risk: Ignoring exit codes can cause a script to report success or continue after a failure.
+
+if blocks
+Flags: then, else, fi
+Example: if tar -czf "$ARCHIVE" /etc; then echo "Success"; else exit 1; fi
+Risk: Incorrect conditions can cause a script to report success when an operation actually failed.
+
+git init
+Flags: None
+Example: git init
+Risk: Initializes a Git repository, so verify the correct directory before creating a repository.
+
+git add
+Flags: None
+Example: git add backup_etc.sh
+Risk: Stages selected changes for a commit, so review the staged files before committing.
+
+git commit
+Flags: -m (commit message)
+Example: git commit -m "Create backup script with logging"
+Risk: Git history documents changes, so meaningful commit messages help track and audit script changes.
+
+git log
+Flags: --oneline (short commit history)
+Example: git log --oneline
+Risk: Git history can provide evidence of script changes and help identify unauthorized or unexpected modifications.
+
+AUDIT AND SECURITY NOTE
+
+Backup logs provide evidence of whether a backup succeeded or failed. Git history provides an audit trail showing when the backup script was changed and what changes were committed.
