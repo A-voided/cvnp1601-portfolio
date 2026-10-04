@@ -90,3 +90,14 @@ I used AI to help organize and explain the Bash script requirements and review t
 AI assistance was used throughout this portfolio as a learning and troubleshooting aid. AI was used to explain Linux commands and concepts, help identify command errors, provide step-by-step guidance, and assist with organizing the documentation and progress logs.
 
 All commands and configuration changes documented in this portfolio were performed and verified in the Linux lab environment. AI assistance was used to support the learning process rather than replace hands-on work.
+
+
+Portfolio card WEEK 6
+
+I am able to create a Bash backup script that backs up /etc, uses variables, creates timestamped archives, 
+and records backup activity in a log. I also learned how to use if statements and exit codes to detect when a 
+backup fails and how Git can be used to track changes to scripts.
+
+AI tool use
+
+I used AI to help understand Bash scripting, troubleshooting, and how to organize the backup script. 

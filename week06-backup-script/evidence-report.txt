@@ -1,0 +1,27 @@
+=== CVNP1601-W06 Evidence Report ===
+Generated : 2026-10-04 22:45:59
+Host      : cvnp1606lab
+Week      : 06
+Folder    : /home/james/cvnp1601-portfolio/week06-backup-script
+
+[BACKUP_ETC.SH SYNTAX — bash -n]
+  Syntax OK
+
+[BACKUP_ETC.SH PERMISSIONS — ls -la]
+  -rwxrwxr-x 1 james james 879 Oct  4 22:06 /home/james/cvnp1601-portfolio/week06-backup-script/backup_etc.sh
+
+[GIT LOG — ~/scripts]
+  No .git found at ~/scripts on this host — confirm your Git history separately in your evidence packet.
+
+[REQUIRED FILES]
+  README.md : NOT FOUND
+  backup_etc.sh : FOUND (879 bytes)
+  week1-cheatsheet.txt : NOT FOUND
+  tech-lead-note.md : FOUND (899 bytes)
+  troubleshooting-narrative.md : FOUND (1130 bytes)
+  week6-diagnosis.md : FOUND (1287 bytes)
+
+[SECRET SCAN]
+  WARNING: possible secret/token pattern found in week06-evidence.sh — review before committing (pattern: aws_secret_access_key)
+
+Commit this file (evidence-report.txt) to your GitHub repo under week06-backup-script/.
