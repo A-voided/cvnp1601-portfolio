@@ -1,0 +1,37 @@
+=== CVNP1601-W07 Evidence Report ===
+Generated : 2026-10-09 17:24:17
+Host      : cvnp1606lab
+Week      : 07
+Folder    : /home/james/cvnp1601-portfolio/week07-server-hardening
+
+[EFFECTIVE SSHD CONFIG — sudo sshd -T]
+  pubkeyauthentication yes
+  passwordauthentication no
+
+[UFW STATUS — sudo ufw status verbose]
+  Status: active
+  Logging: on (low)
+  Default: deny (incoming), allow (outgoing), disabled (routed)
+  New profiles: skip
+  
+  To                         Action      From
+  --                         ------      ----
+  22/tcp                     ALLOW IN    Anywhere                  
+  22/tcp (v6)                ALLOW IN    Anywhere (v6)             
+
+[SENSITIVE FILE PERMISSIONS — ls -la]
+  drwx------ 2 james james 4096 Oct  9 16:27 /home/james/.ssh
+  -rw------- 1 james james 195 Oct  9 16:27 /home/james/.ssh/authorized_keys
+  -rwx------ 1 james james 0 Oct  9 16:53 /home/james/scripts/harden.sh
+
+[REQUIRED FILES]
+  README.md : NOT FOUND
+  week1-cheatsheet.txt : NOT FOUND
+  tech-lead-note.md : NOT FOUND
+  troubleshooting-narrative.md : NOT FOUND
+  week7-diagnosis.md : FOUND (916 bytes)
+
+[SECRET SCAN]
+  WARNING: possible secret/token pattern found in evidence.sh — review before committing (pattern: aws_secret_access_key)
+
+Commit this file (evidence-report.txt) to your GitHub repo under week07-server-hardening/.

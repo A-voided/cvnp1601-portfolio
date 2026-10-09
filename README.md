@@ -101,3 +101,28 @@ backup fails and how Git can be used to track changes to scripts.
 AI tool use
 
 I used AI to help understand Bash scripting, troubleshooting, and how to organize the backup script. 
+
+Portfolio card Week 7 Server Hardening
+
+This week I worked on securing SSH access and setting up a firewall. I created an SSH key and configured the system to 
+use public key authentication instead of password authentication. I also enabled UFW and allowed SSH so remote access 
+would continue working.
+
+I set secure permissions on my SSH files and hardening script and checked for world-writable files in my home directory.
+One issue I found was that another SSH configuration file was still allowing password authentication. I fixed it and 
+verified the final settings.
+
+This lab helped me understand why checking the effective configuration matters and why security changes need to be 
+tested carefully to avoid losing access.
+
+Week 7 — Server Hardening
+
+Configured SSH key authentication, disabled password-based SSH login, enabled UFW with secure default rules, and set 
+restrictive permissions on SSH files. Troubleshot an SSH configuration override and verified the final security 
+settings.
+
+AI Use Statement
+
+I used AI for some guidance while working through the Week 7 server hardening tasks. It helped me understand SSH 
+settings, troubleshoot why password authentication was still enabled, and organize my notes. 
+I ran the commands myself and checked the results in the lab to make sure the settings were correct.

@@ -1,0 +1,21 @@
+Week 7 Server Hardening Cheatsheet
+
+SSH keys are used to log in without entering the account password. `ssh-keygen -t ed25519 -C "cvnp1601-week7"` 
+creates a key pair. `ssh-copy-id -i ~/.ssh/id_ed25519_week7.pub james@192.168.126.129` copies the public key to the 
+account. Never share the private key.
+
+`sudo sshd -t` checks the SSH configuration for errors. `sudo sshd -T | grep passwordauthentication` checks if 
+password login is enabled. `sudo sshd -T | grep pubkeyauthentication` checks if public key login is enabled. 
+`sudo systemctl reload ssh` reloads SSH settings.
+
+For the firewall, `sudo ufw default deny incoming` blocks incoming connections by default, `sudo ufw default allow 
+outgoing` allows outgoing connections, and `sudo ufw allow ssh` allows SSH connections. `sudo ufw enable` turns on 
+the firewall, and `sudo ufw status verbose` checks its status and rules.
+
+The `chmod 700 ~/.ssh` command restricts access to the SSH directory. `chmod 600 ~/.ssh/authorized_keys` restricts 
+access to the authorized keys file. `chmod 700 ~/scripts/harden.sh` restricts access to the hardening script. 
+`find ~ -perm -o+w -ls` searches for world-writable files and directories in the home directory.
+
+Disabling password authentication before testing key-based login can lock you out of SSH. Keep an existing session 
+open while changing settings, allow SSH through the firewall before enabling it, and verify the effective settings 
+after reloading SSH.
