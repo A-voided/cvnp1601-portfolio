@@ -126,3 +126,14 @@ AI Use Statement
 I used AI for some guidance while working through the Week 7 server hardening tasks. It helped me understand SSH 
 settings, troubleshoot why password authentication was still enabled, and organize my notes. 
 I ran the commands myself and checked the results in the lab to make sure the settings were correct.
+
+Week 8 Cron Automation
+
+This project uses cron to run a weekly disk usage report, generate timestamped log entries, capture errors, and 
+provide verifiable evidence that automated system monitoring completed successfully.
+
+AI Tool Use Statement
+
+I used AI as a learning and troubleshooting resource while completing this lab. All cron jobs, scripts, testing, 
+log verification, and documentation were completed and verified by me in the Linux VM. I can explain the cron schedule,
+log redirection, and the commands used to verify successful job execution.
