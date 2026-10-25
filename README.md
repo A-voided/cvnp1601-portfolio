@@ -137,3 +137,21 @@ AI Tool Use Statement
 I used AI as a learning and troubleshooting resource while completing this lab. All cron jobs, scripts, testing, 
 log verification, and documentation were completed and verified by me in the Linux VM. I can explain the cron schedule,
 log redirection, and the commands used to verify successful job execution.
+
+
+Portfolio card WEEK 9
+
+This week I practiced finding processes using too much CPU and stopping them safely. 
+I used commands like ps, pgrep, top, and kill to check running processes and understand how process ownership affects permissions.
+
+I also troubleshot an nginx startup failure by checking the service status and journal logs. 
+The problem was an invalid directive in the nginx configuration file. 
+I removed it, tested the configuration, restarted nginx, and verified that it was running again.
+
+This helped me understand why it is important to check logs, process ownership, and permissions before trying to force a process to 
+stop or restarting a service.
+
+AI Tool Use Statement
+
+I used AI for guidance with Linux commands, troubleshooting, and organizing my documentation. I ran the commands in the lab myself, 
+checked the output, fixed the nginx configuration, and verified the service status.

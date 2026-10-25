@@ -1,0 +1,59 @@
+=== CVNP1601-W09 Evidence Report ===
+Generated : 2026-10-25 19:58:11
+Host      : cvnp1606lab
+Week      : 09
+Folder    : /home/james/cvnp1601-portfolio/week09-process-triage
+
+[PROCESS SNAPSHOT — ps aux --sort=-%cpu (top 10)]
+  USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+  james      10771  0.0  0.0  14964  7092 ?        S    18:46   0:04 sshd: james@pts/0
+  root       11248  0.0  0.0  16780  7440 pts/0    S+   19:57   0:00 sudo bash evidence-week09.sh
+  root       10039  0.0  0.1 242172  9492 ?        Ssl  18:46   0:03 /usr/bin/vmtoolsd
+  root          61  0.0  0.0      0     0 ?        I    18:45   0:01 [kworker/7:0-events]
+  root           1  0.0  0.1  22104 13356 ?        Ss   18:45   0:00 /sbin/init
+  root         355  0.0  0.0      0     0 ?        I    18:45   0:00 [kworker/4:2-mm_percpu_wq]
+  root          23  0.0  0.0      0     0 ?        S    18:45   0:00 [migration/1]
+  root          29  0.0  0.0      0     0 ?        S    18:45   0:00 [migration/2]
+  root          35  0.0  0.0      0     0 ?        S    18:45   0:00 [migration/3]
+
+[NGINX SERVICE STATE]
+  is-active : active
+  is-enabled: enabled
+
+[RECENT JOURNAL — journalctl -u nginx -n 20 --no-pager]
+  Oct 20 22:15:21 cvnp1606lab systemd[1]: nginx.service: Deactivated successfully.
+  Oct 20 22:15:21 cvnp1606lab systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+  -- Boot e43ad35d32c34ec2b577f67210463fe8 --
+  Oct 25 18:46:42 cvnp1606lab systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+  Oct 25 18:46:42 cvnp1606lab systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+  Oct 25 19:07:07 cvnp1606lab systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+  Oct 25 19:07:07 cvnp1606lab systemd[1]: nginx.service: Deactivated successfully.
+  Oct 25 19:07:07 cvnp1606lab systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+  Oct 25 19:07:07 cvnp1606lab systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+  Oct 25 19:07:07 cvnp1606lab systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+  Oct 25 19:13:11 cvnp1606lab systemd[1]: Stopping nginx.service - A high performance web server and a reverse proxy server...
+  Oct 25 19:13:11 cvnp1606lab systemd[1]: nginx.service: Deactivated successfully.
+  Oct 25 19:13:11 cvnp1606lab systemd[1]: Stopped nginx.service - A high performance web server and a reverse proxy server.
+  Oct 25 19:15:33 cvnp1606lab systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+  Oct 25 19:15:33 cvnp1606lab nginx[10996]: 2026/10/25 19:15:33 [emerg] 10996#10996: unknown directive "this_is_an_invalid_directive" in /etc/nginx/nginx.conf:1
+  Oct 25 19:15:33 cvnp1606lab nginx[10996]: nginx: configuration file /etc/nginx/nginx.conf test failed
+  Oct 25 19:15:33 cvnp1606lab systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+  Oct 25 19:15:33 cvnp1606lab systemd[1]: nginx.service: Failed with result 'exit-code'.
+  Oct 25 19:15:33 cvnp1606lab systemd[1]: Failed to start nginx.service - A high performance web server and a reverse proxy server.
+  Oct 25 19:20:40 cvnp1606lab systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...
+  Oct 25 19:20:40 cvnp1606lab systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.
+
+[REQUIRED FILES]
+  README.md : NOT FOUND
+  week1-cheatsheet.txt : NOT FOUND
+  tech-lead-note.md : NOT FOUND
+  troubleshooting-narrative.md : FOUND (869 bytes)
+  incident-worklog.md : FOUND (970 bytes)
+  week9-diagnosis.md : NOT FOUND
+
+[SECRET SCAN]
+  WARNING: possible secret/token pattern found in evidence-week09.sh — review before committing (pattern: aws_secret_access_key)
+
+Commit this file (evidence-report.txt) to your GitHub repo under week09-process-triage/.
+Remember to also commit your timestamped journalctl capture file from Task 4 — it is not
+checked above because its filename includes a timestamp, but it is still required.

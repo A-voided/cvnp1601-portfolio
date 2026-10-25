@@ -1,0 +1,44 @@
+Week 9 Cheatsheet
+
+Checking processes
+
+ps aux --sort=-%cpu | head -10 shows the processes using the most CPU.
+
+pgrep -la bash finds bash processes and shows their process IDs and commands.
+
+top shows running processes and updates their resource usage.
+
+ps -p PID -o pid,ppid,user,stat,comm checks a specific process. Replace PID with the actual process ID.
+
+Stopping processes
+
+kill PID asks a process to stop using SIGTERM.
+
+kill -9 PID forces a process to stop using SIGKILL. Use it only if SIGTERM does not work.
+
+sleep 3 waits three seconds before checking again.
+
+Troubleshooting nginx
+
+sudo systemctl status nginx --no-pager checks the service status.
+
+sudo journalctl -u nginx -n 50 --no-pager shows the latest nginx log entries.
+
+sudo journalctl -u nginx --since "10 minutes ago" --no-pager shows recent nginx logs.
+
+sudo journalctl -u nginx -p err --no-pager filters for error-level messages.
+
+sudo nginx -t checks the nginx configuration for errors.
+
+sudo systemctl restart nginx restarts nginx after fixing the problem.
+
+systemctl is-active nginx checks whether nginx is active.
+
+Useful notes
+
+SIGTERM gives a process a chance to shut down normally. SIGKILL forces it to stop.
+
+When troubleshooting a service, check its status and logs to find the cause before fixing or restarting it. 
+Save the failure evidence first.
+
+Always test the nginx configuration with nginx -t before restarting the service.
