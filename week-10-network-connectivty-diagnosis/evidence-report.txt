@@ -1,0 +1,48 @@
+=== CVNP1601-W10 Evidence Report ===
+Generated : 2026-10-30 22:44:19
+Host      : cvnp1606lab
+Week      : 10
+Folder    : /home/james/cvnp1601-portfolio/week-10-network-connectivty-diagnosis
+
+[INTERFACE STATE — ip addr]
+  1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+      link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+      inet 127.0.0.1/8 scope host lo
+         valid_lft forever preferred_lft forever
+      inet6 ::1/128 scope host noprefixroute 
+         valid_lft forever preferred_lft forever
+  2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+      link/ether 00:0c:29:d4:26:57 brd ff:ff:ff:ff:ff:ff
+      altname enp2s1
+      inet 192.168.126.129/24 metric 100 brd 192.168.126.255 scope global dynamic ens33
+         valid_lft 1172sec preferred_lft 1172sec
+      inet6 fe80::20c:29ff:fed4:2657/64 scope link 
+         valid_lft forever preferred_lft forever
+
+[ROUTING TABLE — ip route]
+  default via 192.168.126.2 dev ens33 proto dhcp src 192.168.126.129 metric 100 
+  192.168.126.0/24 dev ens33 proto kernel scope link src 192.168.126.129 metric 100 
+  192.168.126.2 dev ens33 proto dhcp scope link src 192.168.126.129 metric 100 
+
+[LISTENING SOCKETS — ss -tlnp]
+  State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+  LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*          
+  LISTEN 0      4096      127.0.0.54:53        0.0.0.0:*          
+  LISTEN 0      511          0.0.0.0:80        0.0.0.0:*          
+  LISTEN 0      4096         0.0.0.0:22        0.0.0.0:*          
+  LISTEN 0      511             [::]:80           [::]:*          
+  LISTEN 0      4096            [::]:22           [::]:*          
+
+[REQUIRED FILES]
+  README.md : NOT FOUND
+  week1-cheatsheet.txt : NOT FOUND
+  tech-lead-note.md : FOUND (613 bytes)
+  troubleshooting-narrative.md : NOT FOUND
+  week10-diagnosis.md : FOUND (1019 bytes)
+
+[SECRET SCAN]
+  WARNING: possible secret/token pattern found in evidence-10.sh — review before committing (pattern: aws_secret_access_key)
+
+Commit this file (evidence-report.txt) to your GitHub repo under week10-network-diagnosis/.
+Remember to also commit your pre-change and post-fix network capture files — they are not
+checked above because their filenames include a timestamp, but they are still required.

@@ -155,3 +155,35 @@ AI Tool Use Statement
 
 I used AI for guidance with Linux commands, troubleshooting, and organizing my documentation. I ran the commands in the lab myself, 
 checked the output, fixed the nginx configuration, and verified the service status.
+
+
+Portfolio Card – Week 10
+
+Ticket: CVNP1601-W10-010
+
+Topic: Network Diagnosis and Troubleshooting
+
+This week I worked with Ubuntu networking and learned how to diagnose connectivity problems. 
+I practiced checking network interfaces routing tables, default gateways, listening ports, and SSH.
+
+I tested external IP connectivity and DNS resolution and documented the results. 
+I also worked through a break/fix scenario involving multiple default routes and learned 
+how route metrics affect which gateway is selected.
+
+Skills Practiced
+
+Network interface diagnosis
+
+Routing and default gateways
+
+IP and DNS connectivity testing
+
+Listening ports and SSH troubleshooting
+
+Network evidence collection
+
+Troubleshooting documentation
+
+AI Use
+
+AI was used as a learning aid to help understand commands and troubleshoot problems.
